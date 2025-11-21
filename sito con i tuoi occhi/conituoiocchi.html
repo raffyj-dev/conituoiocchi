@@ -1,0 +1,1392 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Con i tuoi occhi – Casa Vacanze Napoli Centro | Sito Ufficiale</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Casa vacanze elegante nel cuore di Napoli, in Via Santa Brigida, a pochi passi da Piazza Plebiscito, Maschio Angioino e Via Toledo. Appartamento con balcone, Wi-Fi, aria condizionata. Prenota al miglior prezzo.">
+    <style>
+        :root {
+            --bg: #f8f8f8;
+            --bg-alt: #ffffff;
+            --accent: #0078a0;
+            --accent-soft: rgba(0, 120, 160, 0.09);
+            --text: #222222;
+            --text-soft: #5f6368;
+            --border: #e0e0e0;
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.06);
+            --radius-xl: 22px;
+            --radius-lg: 18px;
+            --radius-pill: 999px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+            background-color: #f7f3eb;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1120px, 100% - 32px);
+            margin: 0 auto;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            letter-spacing: 0.02em;
+        }
+
+        h2.section-title {
+            font-size: 1.9rem;
+            margin-bottom: 8px;
+        }
+
+        .section-subtitle {
+            color: var(--text-soft);
+            font-size: 0.98rem;
+            margin-bottom: 40px;
+        }
+
+        /* Header + Nav */
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(16px);
+            background: rgba(248,248,248,0.85);
+            border-bottom: 1px solid rgba(224,224,224,0.6);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            font-size: 1.02rem;
+        }
+
+        .logo-img {
+    width: 60px;   /* puoi aumentare/diminuire */
+    height: auto;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+        .logo-mark::before {
+            content: "";
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #ffffff 0, #aee3ff 50%, rgba(0,0,0,0.2) 100%);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a {
+            padding: 8px 10px;
+            border-radius: 999px;
+            color: var(--text-soft);
+            transition: background 0.2s, color 0.2s, transform 0.15s;
+        }
+
+        .nav-links a:hover {
+            background: var(--accent-soft);
+            color: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        .nav-cta {
+            padding: 9px 18px;
+            border-radius: var(--radius-pill);
+            background: var(--accent);
+            color: #ffffff !important;
+            font-weight: 500;
+            box-shadow: 0 8px 20px rgba(0,120,160,0.30);
+        }
+
+        .nav-toggle {
+            display: none;
+            border: none;
+            background: transparent;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        /* Hero */
+
+        .hero {
+            padding: 52px 0 72px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: minmax(0,1.15fr) minmax(0,1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 0.78rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 14px;
+        }
+
+        .eyebrow-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 3vw, 2.6rem);
+            margin-bottom: 12px;
+        }
+
+        .hero-highlight {
+            color: var(--accent);
+        }
+
+        .hero p {
+            color: var(--text-soft);
+            font-size: 0.98rem;
+            margin-bottom: 22px;
+        }
+
+        .hero-badges {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 26px;
+        }
+
+        .badge {
+            padding: 6px 12px;
+            border-radius: var(--radius-pill);
+            border: 1px solid rgba(0,0,0,0.06);
+            background: rgba(255,255,255,0.9);
+            font-size: 0.78rem;
+            color: var(--text-soft);
+        }
+
+        .hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 22px;
+        }
+
+        .btn {
+            border-radius: var(--radius-pill);
+            padding: 11px 20px;
+            border: 1px solid transparent;
+            font-size: 0.92rem;
+            font-weight: 500;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s, transform 0.15s, border-color 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #ffffff;
+            box-shadow: 0 14px 30px rgba(0,120,160,0.32);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 16px 36px rgba(0,120,160,0.40);
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border-color: rgba(0,0,0,0.08);
+            color: var(--text-soft);
+        }
+
+        .btn-ghost:hover {
+            background: #ffffff;
+            border-color: var(--accent-soft);
+        }
+
+        .hero-small {
+            font-size: 0.78rem;
+            color: var(--text-soft);
+        }
+
+        .hero-visual {
+            border-radius: var(--radius-xl);
+            background: linear-gradient(135deg, #ffffff 0%, #eaf5ff 50%, #fdfdfd 100%);
+            box-shadow: var(--shadow-soft);
+            padding: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-main-img {
+    border-radius: var(--radius-lg);
+    aspect-ratio: 16 / 9;
+    background: 
+        linear-gradient(0deg, rgba(0,0,0,0.4), rgba(0,0,0,0.1)),
+        url("/Users/liceodigiacomo/Downloads/download.png") center/cover no-repeat;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 22px;
+    color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+
+
+        .hero-main-img::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 80% 10%, rgba(255,255,255,0.2), transparent 55%),
+                        radial-gradient(circle at 10% 90%, rgba(255,255,255,0.15), transparent 60%);
+            mix-blend-mode: screen;
+        }
+
+        .hero-main-img-content {
+            position: relative;
+            max-width: 70%;
+        }
+
+        .hero-main-img h3 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .hero-main-img p {
+            font-size: 0.85rem;
+            opacity: 0.85;
+        }
+
+        .hero-tag {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 7px 12px;
+            border-radius: var(--radius-pill);
+            background: rgba(125, 125, 125, 0.257);
+            font-size: 0.75rem;
+        }
+
+        .hero-mini-cards {
+            display: grid;
+            grid-template-columns: repeat(2,minmax(0,1fr));
+            gap: 10px;
+            margin-top: 12px;
+        }
+
+        .mini-card {
+            background: #ffffff;
+            border-radius: var(--radius-lg);
+            padding: 10px 12px;
+            border: 1px solid rgba(0,0,0,0.04);
+            font-size: 0.78rem;
+        }
+
+        .mini-card strong {
+            font-size: 0.82rem;
+        }
+
+        /* Appartamento */
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: minmax(0,1.25fr) minmax(0,0.9fr);
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--bg-alt);
+            border-radius: var(--radius-xl);
+            padding: 18px 18px 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .card-header {
+            margin-bottom: 12px;
+        }
+
+        .card-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+        }
+
+        .card-pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-block: 10px 14px;
+        }
+
+        .pill {
+            font-size: 0.75rem;
+            padding: 5px 10px;
+            border-radius: var(--radius-pill);
+            background: var(--accent-soft);
+            color: var(--accent);
+        }
+
+        .card-list {
+            list-style: none;
+            margin-bottom: 12px;
+            font-size: 0.86rem;
+            color: var(--text-soft);
+        }
+
+        .card-list li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 4px;
+        }
+
+        .card-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent);
+        }
+
+        .info-small {
+            font-size: 0.8rem;
+            color: var(--text-soft);
+        }
+
+        /* Servizi */
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4,minmax(0,1fr));
+            gap: 16px;
+        }
+
+        .service {
+            background: var(--bg-alt);
+            border-radius: var(--radius-lg);
+            padding: 14px 14px 16px;
+            border: 1px solid rgba(0,0,0,0.03);
+            font-size: 0.86rem;
+        }
+
+        .service-title {
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .service-tagline {
+            color: var(--text-soft);
+            font-size: 0.8rem;
+        }
+
+        /* Posizione & Dintorni */
+
+        .two-col {
+            display: grid;
+            grid-template-columns: minmax(0,1.1fr) minmax(0,1fr);
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .chip-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .chip {
+            font-size: 0.78rem;
+            padding: 6px 11px;
+            border-radius: var(--radius-pill);
+            background: #fff;
+            border: 1px solid rgba(0,0,0,0.05);
+            color: var(--text-soft);
+        }
+
+        .check-list {
+            list-style: none;
+            font-size: 0.88rem;
+            color: var(--text-soft);
+        }
+
+        .check-list li {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 6px;
+        }
+
+        .check-icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 999px;
+            border: 1px solid rgba(0,0,0,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.73rem;
+            color: var(--accent);
+            flex-shrink: 0;
+        }
+
+        .map-card {
+            background: var(--bg-alt);
+            border-radius: var(--radius-xl);
+            padding: 16px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0,0,0,0.02);
+            font-size: 0.85rem;
+        }
+
+        .map-placeholder {
+            border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, #d6e7ff, #eaf2ff);
+            height: 190px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.84rem;
+            color: #345;
+            text-align: center;
+            padding: 0 12px;
+        }
+
+        /* Galleria */
+
+        .gallery-section {
+    padding: 60px 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
+
+
+        .gallery-item {
+            border-radius: 16px;
+            overflow: hidden;
+            background: #ddd;
+            aspect-ratio: 4 / 3;
+            position: relative;
+        }
+
+        .gallery-item span {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            color: #666;
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            text-align: center;
+            padding: 0 8px;
+        }
+
+        /* Recensioni */
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: 20px;
+        }
+
+        .review {
+            background: var(--bg-alt);
+            border-radius: var(--radius-xl);
+            padding: 16px 16px 18px;
+            border: 1px solid rgba(0,0,0,0.03);
+            font-size: 0.86rem;
+        }
+
+        .review-stars {
+            color: #f5b100;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+
+        .review-author {
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .review-meta {
+            font-size: 0.8rem;
+            color: var(--text-soft);
+        }
+
+        /* Info & Regole */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3,minmax(0,1fr));
+            gap: 18px;
+        }
+
+        .info-card {
+            background: var(--bg-alt);
+            border-radius: var(--radius-lg);
+            padding: 14px 14px 16px;
+            border: 1px solid rgba(0,0,0,0.04);
+            font-size: 0.86rem;
+        }
+
+        .info-card h3 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        /* Contatti & Prenotazioni */
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: minmax(0,1.1fr) minmax(0,1fr);
+            gap: 32px;
+        }
+
+        .contact-card {
+            background: var(--bg-alt);
+            border-radius: var(--radius-xl);
+            padding: 18px 18px 20px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+     form {
+    max-width: 450px;
+    margin: 20px auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.btn-send {
+    padding: 12px 18px;
+    background: #0078a0;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    transition: 0.2s;
+}
+
+.btn-send:hover {
+    background: #005f82;
+}
+
+        label {
+            font-size: 0.82rem;
+            color: var(--text-soft);
+        }
+
+        input, select, textarea {
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.15);
+            padding: 8px 10px;
+            font: inherit;
+            background: #ffffff;
+        }
+
+        textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .form-footer {
+            grid-column: 1 / -1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 4px;
+        }
+
+        .form-helper {
+            font-size: 0.78rem;
+            color: var(--text-soft);
+        }
+
+        .contact-info {
+            font-size: 0.88rem;
+        }
+
+        .contact-info h3 {
+            font-size: 0.95rem;
+            margin-bottom: 6px;
+        }
+
+        .contact-list {
+            list-style: none;
+            margin-top: 6px;
+        }
+
+        .contact-list li {
+            margin-bottom: 6px;
+        }
+
+        /* Footer */
+
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 26px 0 26px;
+            font-size: 0.8rem;
+            color: var(--text-soft);
+            background: #f5f5f5;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links, .footer-meta {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 3px;
+        }
+
+        .social-links a {
+            padding: 4px 0;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 960px) {
+            .hero-grid,
+            .two-col,
+            .contact-grid,
+            .cards-grid {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            .hero {
+                padding-top: 30px;
+            }
+
+            .services-grid,
+            .reviews-grid,
+            .gallery-grid,
+            .info-grid {
+                grid-template-columns: repeat(2,minmax(0,1fr));
+            }
+        }
+
+        @media (max-width: 760px) {
+            header {
+                background: rgba(248,248,248,0.94);
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: absolute;
+                inset: 72px 0 auto 0;
+                background: rgba(248,248,248,0.98);
+                padding: 12px 16px 16px;
+                flex-direction: column;
+                align-items: flex-start;
+                border-bottom: 1px solid rgba(224,224,224,0.7);
+                max-height: 0;
+                overflow: hidden;
+                opacity: 0;
+                transform: translateY(-8px);
+                transition: max-height 0.2s ease-out, opacity 0.18s, transform 0.18s;
+            }
+
+            .nav-links.open {
+                max-height: 400px;
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .hero-grid {
+                gap: 26px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .services-grid,
+            .reviews-grid,
+            .offers-grid,
+            .gallery-grid,
+            .info-grid {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            form {
+                grid-template-columns: minmax(0,1fr);
+            }
+
+            .form-footer {
+                flex-direction: column-reverse;
+                align-items: stretch;
+            }
+
+            .footer-grid {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container nav">
+       <img src="WhatsApp Image 2025-11-21 at 16.11.37.jpeg" alt="Logo Con i tuoi occhi" class="logo-img">
+
+       <a>Con i Tuoi Occhi</a>
+        <nav>
+             
+            <button class="nav-toggle" aria-label="Menu" id="navToggle">☰</button>
+            <div class="nav-links" id="navLinks">
+                <a href="#appartamento">Appartamento</a>
+                <a href="#servizi">Servizi</a>
+                <a href="#posizione">Posizione</a>
+                <a href="#galleria">Galleria</a>
+                <a href="#recensioni">Recensioni</a>
+                <a href="#info">Info &amp; regole</a>
+                <a href="#contatti">Contatti</a>
+                <a href="#prenota" class="nav-cta">Richiedi disponibilità</a>
+        
+            </div>
+        </nav>
+    </div>
+</header>
+
+<main id="top">
+
+    <!-- Hero -->
+    <section class="hero" id="prenota">
+        <div class="container hero-grid">
+            <div>
+                <div class="eyebrow">
+                    <span class="eyebrow-dot"></span>
+                    Casa vacanze · Zona Plebiscito
+                </div>
+                <h1>
+                    Con i tuoi occhi,
+                    <span class="hero-highlight">Napoli da vicino</span>.
+                </h1>
+                <p>
+                    Appartamento elegante e funzionale in Via Santa Brigida, nel cuore del quartiere San Ferdinando:
+                    a pochi passi da Piazza Plebiscito, Maschio Angioino, Teatro San Carlo e Via Toledo.
+                </p>
+
+                <div class="hero-badges">
+                    <div class="badge">Balcone con vista città</div>
+                    <div class="badge">Wi-Fi gratuito &amp; Smart TV</div>
+                    <div class="badge">Aria condizionata</div>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="#contatti" class="btn btn-primary">Richiedi un preventivo</a>
+                    <a href="https://wa.me/393348362295" class="btn btn-ghost" target="_blank" rel="noopener">
+                        Scrivici su WhatsApp
+                    </a>
+                     <!-- Esempio pulsante: sostituisci BOOKING_LINK con l'URL della tua scheda su Booking.com -->
+<a href="https://www.booking.com/hotel/it/con-i-tuoi-occhi.it.html" target="_blank" rel="noopener" class="btn btn-primary">Prenota su Booking.com</a>
+                </div>
+
+                <div class="hero-small">
+                    Prenotazione diretta · Nessuna commissione · Risposta rapida
+                </div>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <div class="hero-main-img">
+                
+                    <div class="hero-tag">
+                        Zona San Ferdinando<br>Tra Plebiscito, Municipio e Toledo
+                    </div>
+                </div>
+                <div class="hero-mini-cards">
+                    <div class="mini-card">
+                        <strong>Ideale per 2–4 ospiti</strong><br>
+                        Una camera da letto + soggiorno con divano letto e angolo cottura.
+                    </div>
+                    <div class="mini-card">
+                        <strong>Collegamenti perfetti</strong><br>
+                        Metro Toledo e Municipio a pochi minuti, Molo Beverello a circa 10 minuti a piedi.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appartamento -->
+    <section id="appartamento">
+        <div class="container">
+            <h2 class="section-title">L’appartamento</h2>
+            <p class="section-subtitle">
+                Un alloggio curato nei dettagli, pensato per chi vuole vivere Napoli
+                in una posizione strategica, senza rinunciare al comfort di casa.
+            </p>
+
+            <div class="cards-grid">
+                <article class="card">
+                    <div class="card-header">
+                        <div class="card-label">Con i tuoi occhi · Casa Vacanze</div>
+                        <div class="card-title">Bilocale con balcone e vista città</div>
+                    </div>
+                    <div class="card-pill-row">
+                        <span class="pill">Fino a 4 ospiti</span>
+                        <span class="pill">1 camera da letto</span>
+                        <span class="pill">Soggiorno con divano letto</span>
+                        <span class="pill">Balcone su Via Santa Brigida</span>
+                    </div>
+                    <p style="font-size:0.9rem; color:var(--text-soft); margin-bottom:10px;">
+                        L’appartamento è composto da un ampio soggiorno con balcone che si affaccia su Via Santa Brigida,
+                        con area relax e divano letto, piccolo angolo cottura con piastra a induzione, bagno privato
+                        con doccia e una camera da letto matrimoniale.
+                    </p>
+                    <ul class="card-list">
+                        <li>Angolo cottura con frigorifero e piano cottura/induzione</li>
+                        <li>Bagno privato con doccia, asciugamani e set di cortesia</li>
+                        <li>Zona giorno con area salotto e TV a schermo piatto</li>
+                        <li>Camera da letto accogliente con biancheria inclusa</li>
+                        <li>Balcone con vista sulla città e sui palazzi storici</li>
+                    </ul>
+                    <div class="info-small">
+                        Wi-Fi gratuito in tutta la struttura, aria condizionata e smart TV a disposizione degli ospiti.
+                    </div>
+                </article>
+
+                <aside class="card">
+                    <div class="card-header">
+                        <div class="card-label">Comfort inclusi</div>
+                        <div class="card-title">Dotazioni principali</div>
+                    </div>
+                    <ul class="card-list" style="margin-bottom:16px;">
+                        <li>Aria condizionata / riscaldamento</li>
+                        <li>Connessione Wi-Fi gratuita</li>
+                        <li>Smart TV a schermo piatto</li>
+                        <li>Frigorifero e piano cottura a induzione</li>
+                        <li>Asciugamani e lenzuola forniti</li>
+                        <li>Bagno privato con doccia</li>
+                        <li>Area salotto comoda per rilassarsi o lavorare</li>
+                    </ul>
+                    <div class="info-small">
+                        Perfetto per coppie, piccoli gruppi di amici o viaggiatori singoli che cercano un punto d’appoggio
+                        centrale per visitare Napoli e il Golfo.
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi -->
+    <section id="servizi">
+        <div class="container">
+            <h2 class="section-title">Servizi &amp; dotazioni</h2>
+            <p class="section-subtitle">
+                Tutto ciò che ti serve per un soggiorno confortevole, nel pieno centro di Napoli:
+                tecnologia, comfort e una posizione imbattibile.
+            </p>
+
+            <div class="services-grid">
+                <div class="service">
+                    <div class="service-title">Wi-Fi gratuito</div>
+                    <div class="service-tagline">Connessione stabile in tutto l’alloggio.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Aria condizionata</div>
+                    <div class="service-tagline">Climatizzazione per le giornate più calde.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Smart TV</div>
+                    <div class="service-tagline">Intrattenimento in soggiorno con schermo piatto.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Angolo cottura</div>
+                    <div class="service-tagline">Piastra a induzione, frigorifero e basi per cucinare.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Biancheria completa</div>
+                    <div class="service-tagline">Lenzuola, asciugamani e set di cortesia inclusi.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Balcone privato</div>
+                    <div class="service-tagline">Affaccio sulla centralissima Via Santa Brigida.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Posizione centrale</div>
+                    <div class="service-tagline">Vicino a metro, porto, vie dello shopping e musei.</div>
+                </div>
+                <div class="service">
+                    <div class="service-title">Supporto ospiti</div>
+                    <div class="service-tagline">Suggerimenti su ristoranti, spostamenti e attrazioni.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Posizione & Dintorni -->
+    <section id="posizione">
+        <div class="container">
+            <h2 class="section-title">Nel cuore di Napoli</h2>
+            <p class="section-subtitle">
+                La casa vacanze è situata nel quartiere San Ferdinando, uno dei più importanti e storici della città:
+                a pochi passi da Piazza Plebiscito, Via Toledo, Piazza Municipio e dal Lungomare.
+            </p>
+
+            <div class="two-col">
+                <div>
+                    <div class="chip-row">
+                        <span class="chip">Maschio Angioino · ~300 m</span>
+                        <span class="chip">Palazzo Reale · ~400 m</span>
+                        <span class="chip">Piazza Plebiscito · ~600 m</span>
+                        <span class="chip">Castel dell’Ovo · ~1,4 km</span>
+                        <span class="chip">Metro Toledo · ~400 m</span>
+                        <span class="chip">Metro Municipio · ~400 m</span>
+                        <span class="chip">Molo Beverello · ~10 min a piedi</span>
+                    </div>
+                    <ul class="check-list">
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>Centro storico &amp; cultura</strong><br>
+                                A pochi minuti a piedi da Maschio Angioino, Teatro San Carlo, Palazzo Reale,
+                                Galleria Borbonica e da tutte le principali attrazioni del centro.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>Shopping &amp; vita cittadina</strong><br>
+                                Via Toledo e Via Chiaia sono facilmente raggiungibili: tra boutique, bar, pasticcerie
+                                e locali tipici napoletani.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>Collegamenti con le isole</strong><br>
+                                Dal vicino Molo Beverello puoi imbarcarti per Capri, Ischia, Procida, Ponza e Ventotene.
+                            </div>
+                        </li>
+                        <li>
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>Lungomare a portata di passeggiata</strong><br>
+                                In circa 10 minuti di cammino si raggiunge il Lungomare di Napoli,
+                                con vista su Castel dell’Ovo e sul Vesuvio.
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <aside class="map-card">
+                  <div style="position:relative; width:100%; padding-bottom:56%; border-radius:16px; overflow:hidden;">
+    <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2890.1786876597976!2d14.247601385584208!3d40.83939764537339!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x133b09a6a630058d%3A0x91bca04c390e8fcc!2sCon%20i%20tuoi%20occhi!5e0!3m2!1sit!2sit!4v1763742017832!5m2!1sit!2sit" 
+        style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+
+                    <strong>Mezzi pubblici nelle vicinanze</strong>
+                    <ul class="card-list" style="margin-top:8px;">
+                        <li><strong>Metro Linea 1:</strong> fermate “Toledo” e “Municipio” raggiungibili a piedi in circa 5 minuti.</li>
+                        <li><strong>Stazione marittima:</strong> Molo Beverello a circa 10 minuti a piedi per traghetti e aliscafi.</li>
+                        <li><strong>Aeroporto:</strong> Aeroporto di Napoli Capodichino a circa 9 km (facile accesso con taxi o navetta).</li>
+                        <li><strong>Trasporto locale:</strong> fermate bus e funicolari nelle immediate vicinanze per spostarsi in città.</li>
+                    </ul>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galleria -->
+    <section id="galleria">
+        <div class="container">
+            <h2 class="section-title">Galleria</h2>
+            
+           <div class="gallery-grid">
+    <img src="694289008.jpg" alt="Soggiorno">
+    <img src="694288989.jpg" alt="Camera da letto">
+    <img src="694289001.jpg" alt="Bagno">
+    <img src="694488446.jpg" alt="Balcone su Via Santa Brigida">
+    <img src="699577571.jpg" alt="Vista sulla città">
+     <img src="1.jpg" alt="Vista sulla città">
+     <img src="2.jpg" alt="Vista sulla città">
+     <img src="3.jpg" alt="Vista sulla città">
+
+</div>
+
+        </div>
+    </section>
+
+    <!-- Recensioni -->
+    <section id="recensioni">
+        <div class="container">
+            <h2 class="section-title">Cosa apprezzano gli ospiti</h2>
+            <p class="section-subtitle">
+                Alcune recensioni dei nostri ospiti: posizione, comfort e possibilità di muoversi a piedi tra le principali attrazioni della città.
+            </p>
+
+            <div class="reviews-grid">
+                <article class="review">
+                    <div class="review-stars">★★★★★</div>
+                    <p>
+                        “Posizione perfetta: in pochi minuti eravamo a Piazza Plebiscito, al Maschio Angioino e sul Lungomare.
+                        Appartamento pulito, silenzioso e con tutto il necessario per qualche giorno a Napoli.”
+                    </p>
+                    <div class="review-author">Ospite coppia</div>
+                    <div class="review-meta">Soggiorno leisure · 3 notti</div>
+                </article>
+                <article class="review">
+                    <div class="review-stars">★★★★★</div>
+                    <p>
+                        “La casa è esattamente come in foto, il balcone su Via Santa Brigida è un plus.
+                        Wi-Fi stabile, aria condizionata e host molto disponibile per consigli e indicazioni.”
+                    </p>
+                    <div class="review-author">Ospite singolo</div>
+                    <div class="review-meta">Viaggio di lavoro · 2 notti</div>
+                </article>
+                <article class="review">
+                    <div class="review-stars">★★★★☆</div>
+                    <p>
+                        “Siamo riusciti a visitare gran parte della città a piedi.
+                        Vicinissimo alle fermate metro e al porto per le isole. Ottimo punto di partenza per esplorare Napoli.”
+                    </p>
+                    <div class="review-author">Piccolo gruppo di amici</div>
+                    <div class="review-meta">Weekend lungo · 4 notti</div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info & Regole -->
+    <section id="info">
+        <div class="container">
+            <h2 class="section-title">Informazioni &amp; regole della casa</h2>
+            <p class="section-subtitle">
+                Per garantire un soggiorno piacevole a tutti gli ospiti, ti chiediamo di rispettare
+                alcune semplici regole. 
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Orari di check-in / check-out</h3>
+                    <p>
+                        Check-in: indicativamente dalle 14:00 (possibilità di concordare orari diversi se disponibili).<br>
+                        Check-out: entro le 10:30.<br><br>
+                        Comunica sempre in anticipo l’orario di arrivo per organizzare al meglio la consegna delle chiavi
+                        o l’eventuale self check-in.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>Regole principali</h3>
+                    <p>
+                        • Non è consentito fumare all’interno dell’appartamento.<br>
+                        • Eventuali feste o schiamazzi non sono ammessi, per rispetto del condominio.<br>
+                        • Sono benvenuti solo gli ospiti registrati nella prenotazione.<br>
+                        • Ti chiediamo di avere cura degli arredi e delle dotazioni.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>Altre informazioni utili</h3>
+                    <p>
+                        • Animali domestici: valutazione caso per caso, su richiesta.<br>
+                        • Tassa di soggiorno: se prevista dal Comune, viene saldata secondo normativa vigente.<br>
+                        • In caso di soggiorni prolungati possono essere previste pulizie intermedie su accordo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti & Prenotazioni -->
+    <section id="contatti">
+        <div class="container">
+            <h2 class="section-title">Contatti &amp; richiesta disponibilità</h2>
+            <p class="section-subtitle">
+                Compila il form per ricevere un preventivo personalizzato alle tue date, oppure contattaci
+                direttamente via email, telefono o WhatsApp.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <form id="contactForm" action="https://formspree.io/f/meodoowj" method="POST">
+
+    <div class="form-group">
+        <label>Nome e cognome *</label>
+        <input type="text" name="nome" required>
+    </div>
+
+    <div class="form-group">
+        <label>Email *</label>
+        <input type="email" name="email" required>
+    </div>
+
+    <div class="form-group">
+        <label>Telefono *</label>
+        <input type="text" name="telefono" required>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group">
+            <label>Data di arrivo * </label>
+            <input type="date" name="arrivo" required>
+        </div>
+        <div class="form-group">
+            <label>Data di partenza * </label>
+            <input type="date" name="partenza" required>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Numero ospiti</label>
+        <select name="ospiti">
+            <option value="">Seleziona</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Messaggio</label>
+        <textarea name="messaggio" rows="4"></textarea>
+    </div>
+
+    <!-- Honeypot anti-spam -->
+    <div style="display:none;">
+        <input type="text" name="website">
+    </div>
+
+    <button type="submit" class="btn-send">Invia richiesta</button>
+
+    <!-- Messaggio di invio -->
+    <p id="formMessage" style="display:none; margin-top:10px; color:green;">
+        Richiesta inviata correttamente!
+    </p>
+
+</form>
+
+                </div>
+
+                <aside class="contact-info">
+                    <h3>Dati di contatto</h3>
+                    <ul class="contact-list">
+                        <li><strong>Indirizzo:</strong> Via Santa Brigida,72, Napoli (quartiere San Ferdinando)</li>
+                        <li><strong>Telefono:</strong> <a href="tel:+393348362295">+39 3348362295</a></li>
+                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/393348362295" target="_blank" rel="noopener">Chat dedicata</a></li>
+                        <li><strong>Email:</strong> <a href="mailto:conituoiocchi72@gmail.com">conituoiocchi72@gmail.com </a></li>
+                        <li><strong>CIN:</strong> IT063049C2XGK8CM6CT</li>
+                    </ul>
+
+                    <h3 style="margin-top:16px;">Come arrivare</h3>
+                    <p>
+                        Dalla Stazione Centrale puoi raggiungere l’appartamento con la Linea 1 della metropolitana
+                        (fermate Toledo o Municipio) oppure in taxi.<br>
+                        Dall’aeroporto di Capodichino puoi usare taxi, navetta o servizi privati.
+                    </p>
+
+                    <h3 style="margin-top:16px;">Collaborazioni &amp; soggiorni lunghi</h3>
+                    <p>
+                        Sei un’agenzia, un’azienda o pensi a un soggiorno prolungato a Napoli?
+                        Contattaci per condizioni dedicate e preventivi personalizzati.
+                    </p>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div class="footer-meta">
+      <span>© <span id="currentYear"></span> Con i tuoi occhi · Casa Vacanze</span>
+      <span>Napoli, Italia · CIN: IT063049C2XGK8CM6CT</span>
+    </div>
+
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookie.html">Cookie Policy</a>
+      <a href="termini.html">Termini &amp; Condizioni</a>
+    </div>
+
+     <div class="social-links">
+            <a href="https://www.instagram.com/con_i_tuoi_occhi/?igsh=YmR3bWl6OGlyZzRo&utm_source=qr#" aria-label="Instagram">Instagram</a> ·
+            <a href="https://www.facebook.com/people/Con-i-tuoi-occhi/61577029510659/?locale=it_IT" aria-label="Facebook">Facebook</a> ·
+            <a href="#" aria-label="TikTok">TikTok</a>
+        </div>
+  </div>
+
+  <!-- Cookie consent banner -->
+  <div id="cookie-consent" style="position:fixed; right:16px; left:16px; bottom:18px; background:#fff; border-radius:12px; box-shadow:0 8px 30px rgba(0,0,0,0.12); padding:14px; display:none; z-index:9999; font-size:0.95rem;">
+    <div style="display:flex; gap:12px; align-items:center; justify-content:space-between; flex-wrap:wrap;">
+      <div style="flex:1; min-width:220px;">
+        <strong>Usiamo i cookie</strong>
+        <div style="color:#666; margin-top:6px;">Utilizziamo cookie tecnici per il corretto funzionamento del sito e cookie opzionali (analitici/marketing) solo previo consenso. Puoi cambiare le preferenze in qualsiasi momento.</div>
+      </div>
+      <div style="display:flex; gap:8px; align-items:center;">
+        <a href="cookie.html" style="padding:8px 12px; text-decoration:underline; color:var(--text-soft);">Impostazioni cookie</a>
+        <button id="acceptCookies" class="btn btn-primary" style="padding:8px 14px;">Accetta</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // mostra banner se non accettato
+    (function(){
+      const consent = localStorage.getItem('cookie_consent');
+      const el = document.getElementById('cookie-consent');
+      if (!consent) el.style.display = 'block';
+
+      document.getElementById('acceptCookies').addEventListener('click', function(){
+        localStorage.setItem('cookie_consent', JSON.stringify({accepted: true, date: new Date().toISOString()}));
+        el.style.display = 'none';
+      });
+
+      // current year
+      document.getElementById('currentYear').textContent = new Date().getFullYear();
+    })();
+  </script>
+</footer>
+
+<script>
+    // Hamburger menu
+    const navToggle = document.getElementById('navToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    navToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+
+    // Chiudi menu mobile al click su un link
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+        });
+    });
+
+    // Scroll morbido
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const targetID = this.getAttribute('href');
+            if (targetID.length > 1) {
+                e.preventDefault();
+                const target = document.querySelector(targetID);
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // Anno corrente footer
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
